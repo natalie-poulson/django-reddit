@@ -1,0 +1,61 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Subreddit</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="{% url 'post_list' %}">reddit</a></li>
+            <li><a href="{% url 'register' %}">Sign Up</a></li>
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'user_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+    <header>
+        <ul>
+            <li><a hred="#">Posts</a></li>
+            <li><a hred="#">Rules</a></li>
+            <li><a hred="#">Related Subreddits</a></li>
+            <li><a hred="#">Discord</a></li>
+        </ul>
+    </header>
+    <main>    
+        <div id="posts">
+                {% block content %}
+                {% endblock %}
+            </div>
+        <aside>
+            <div>
+                <a href = {% url 'post_create' %}>Create Post</a>
+                <p> elit. Reruafafdadf corrupti illum sapiente?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum similique iste veniam quae numquam placeat aliquid ad! Aliquid, blanditiis? Libero, a reprehenderit. Quis minus laboriosam veritatis aliquid, corrupti illum sapiente?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum similique iste veniam quae numquam placeat aliquid ad! Aliquid, blanditiis? Libero, a reprehenderit. Quis minus laboriosam veritatis aliquid, corrupti illum sapiente?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum similique iste veniam quae numquam placeat aliquid ad! Aliquid, blanditiis? Libero, a reprehenderit. Quis minus laboriosam veritatis aliquid, corrupti illum sapiente?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum similique iste veniam quae numquam placeat aliquid ad! Aliquid, blanditiis? Libero, a reprehenderit. Quis minus laboriosam veritatis aliquid, corrupti illum sapiente?</p>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rerum similique iste veniam quae numquam placeat aliquid ad! Aliquid, blanditiis? Libero, a reprehenderit. Quis minus laboriosam veritatis aliquid, corrupti illum sapiente?</p>
+            </div>
+        </aside>
+    </main>
+</body>
+</body>
+</html>

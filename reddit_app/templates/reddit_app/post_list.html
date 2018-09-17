@@ -1,0 +1,19 @@
+{% extends 'reddit_app/base.html' %}
+
+{% block content %}
+<ul>
+    {% for post in posts %}
+        <li id ="post-block">
+                <div class="post-info">
+                    <p>Posted by <a href="#">{{post.user}}</a> <a href="#">{{post.created_at}}</a></p>
+                    <h3><a href={% url 'post_detail' pk=post.id %}>{{post.title}}</a></h3>
+                    <div>
+                        {{post.content}}
+                        {{post.picture}}
+                        {{post.site_url}}
+                    </div>
+                </div>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock %}

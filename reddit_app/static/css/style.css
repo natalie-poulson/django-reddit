@@ -1,0 +1,53 @@
+nav li {
+    list-style: none;
+    font-size: 1.5em;
+}
+header {
+    background-image:url('../assets/header.png');
+    background-repeat: none;
+    background-position: center;
+    background-size:cover;
+    width: 100vw;
+    height:23vh;
+    display:flex;
+    align-items:flex-end;
+}
+header a {
+    color:white;
+}
+header li {
+    list-style: none;
+    padding: 0 1em;
+}
+header ul {
+    display:flex;
+}
+main {
+    display:flex;
+    justify-content:space-around;
+    margin: 1em 5em;
+}
+aside div {
+    border: .1em solid black;
+    width:25vw;
+    margin: 1em 0;
+    padding: .5em;
+}
+#posts {
+    width: 50vw;
+}
+#posts li {
+    list-style: none;
+}
+.post-info a {
+    text-decoration: none;
+    color: black
+}
+.post-info {
+    color: black;
+}
+#post-block {
+    border: .1em solid black;
+    margin: 1em 0;
+    padding: .5em;
+}
