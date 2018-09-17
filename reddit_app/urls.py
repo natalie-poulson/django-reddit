@@ -12,5 +12,5 @@ urlpatterns= [
     path('logout', views.user_logout, name='logout'),
     path('special', views.special, name='special'),
 
-    path('comment/new', views.comment_create, name='comment_create')
+    path('posts/<int:pk>/comments/new', views.comment_create, name='comment_create')
 ]

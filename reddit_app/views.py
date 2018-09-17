@@ -61,7 +61,8 @@ def post_list(request):
 
 def post_detail(request, pk):
     post = Post.objects.get(id=pk)
-    return render(request, 'reddit_app/post_detail.html', {'post': post})
+    comment = Comment.objects.get(post=pk)
+    return render(request, 'reddit_app/post_detail.html', {'post': post}, {'form': form}, {'comments', comments})
 
 @login_required
 def post_create(request):
@@ -83,12 +84,13 @@ def post_create(request):
     return render(request, 'reddit_app/post_form.html', {'form': form})
 
 @login_required
-def comment_create(request):
+def comment_create(request,pk):
+    post = pk
     if request.method == 'POST':
         form = CommentForm(request.POST)
         if form.is_valid():
             content = form.cleaned_data.get('content')
-            comment = Comment(content=content, user=request.user, post=request.post)
+            comment = Comment(content=content, user=request.user, post=post)
             print(comment)
             comment.save()
             return redirect('post_detail', pk=comment.post.pk)
